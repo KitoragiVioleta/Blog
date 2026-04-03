@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Мій блог</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo">✍️ Мій блог</h1>
+      <button class="btn btn--primary" id="newPostBtn">+ Новий пост</button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Editor -->
+    <div class="editor" id="editor" style="display:none;">
+      <div class="editor__card">
+        <h2 class="editor__title" id="editorTitle">Новий пост</h2>
+
+        <div class="field">
+          <label class="field__label" for="eTitle">Заголовок</label>
+          <input class="field__input" id="eTitle" type="text" placeholder="Введіть заголовок..." />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="eCat">Категорія</label>
+          <select class="field__input" id="eCat">
+            <option value="tech">💻 Технології</option>
+            <option value="life">🌿 Життя</option>
+            <option value="travel">✈️ Подорожі</option>
+            <option value="other">📌 Інше</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="eBody">Текст посту</label>
+          <textarea class="field__input" id="eBody" rows="6" placeholder="Напишіть свій пост..."></textarea>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Теги <span class="field__hint">(натисніть Enter щоб додати)</span></label>
+          <div class="tag-input" id="tagInput">
+            <input class="tag-input__box" id="tagBox" type="text" placeholder="додати тег..." />
+          </div>
+        </div>
+
+        <div class="editor__actions">
+          <button class="btn" id="cancelBtn">Скасувати</button>
+          <button class="btn btn--primary" id="saveBtn">Опублікувати</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters & Search -->
+    <div class="toolbar">
+      <div class="filters" id="filters">
+        <button class="filter active" data-cat="all">Всі</button>
+        <button class="filter" data-cat="tech">Технології</button>
+        <button class="filter" data-cat="life">Життя</button>
+        <button class="filter" data-cat="travel">Подорожі</button>
+        <button class="filter" data-cat="other">Інше</button>
+      </div>
+      <input class="search" id="searchBox" type="text" placeholder="🔍 Пошук..." />
+    </div>
+
+    <!-- Posts list -->
+    <div id="postsContainer"></div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
